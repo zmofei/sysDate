@@ -1,7 +1,7 @@
 sysDate
 =======
 
-use javascript get  servers date
+use javascript get servers date ,which you needn't care about the servers script.
 
 example
 =======
