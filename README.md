@@ -36,3 +36,11 @@ setTimeout(function(){
 },3000)
 
 ```
+
+
+thanks
+====
+
+thanks PaPa, who didn't give me the server script ajax port,which make do this.
+
+thanks lay, who give me the async idea
