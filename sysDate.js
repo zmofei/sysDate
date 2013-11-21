@@ -29,13 +29,24 @@ var sysDate = function() {
         var sysD=xmlhttp.getResponseHeader('Date');
         sysD=new Date(sysD);
         sysD=Date.parse(sysD);
-        exp.done&&exp.done(sysD);
+        if(exp.doneFn){
+          exp.doneFn(sysD);
+        };
+        exp.config.lastDate=sysD;
       }
     };
-    console.log('url',exp.config.url);
+    
+    exp.done = function(fn){
+      if(exp.config.lastDate){
+        fn&&fn(exp.config.lastDate);
+      }else{
+        exp.doneFn=fn;
+      }
+      
+    }
+    
     xmlhttp.open("GET", exp.config.url, true);
     xmlhttp.send();
   }
-  
   
 })(sysDate);
