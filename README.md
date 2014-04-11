@@ -41,6 +41,6 @@ setTimeout(function(){
 thanks
 ====
 
-thanks PaPa, who didn't give me the server script ajax port,which make do this.
+thanks PaPa, who didn't give me the server ajax port,which make this project come true.
 
-thanks lay, who give me the async idea
+thanks lay, who give me the async idea.
