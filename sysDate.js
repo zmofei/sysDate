@@ -1,8 +1,11 @@
-/*
- *get current websit locale time
+/**
+ * get current time form the servers
+ * @example
+ *     var time=new sysDate()
+ *     time.done(function(timeStamp){
+ *         console.log(timeStamp);
+ *     })
  */
-
-
 (function(root, factory) {
     'use strict';
     var sysDate = function() {
@@ -17,23 +20,29 @@
     } else {
         root.sysDate = sysDate;
     }
-
 })(this, function(exp) {
     'use strict';
+
     exp.config = {
         url: '/'
     };
 
     exp.init = function() {
+        //the first arouments can be:
+        //{url:'/xxx'}
         var arg = arguments[0];
-        for (var i in arg) {
-            exp.config[i] = arg[i];
+        if (typeof(arg) == 'object') {
+            for (var i in arg) {
+                exp.config[i] = arg[i];
+            }
         }
         exp.get();
         return exp;
     };
 
     exp.get = function() {
+        //use xmlhttp to get data form the server
+        //save to config.lastDate
         var xmlhttp;
 
         if (window.XMLHttpRequest) {
