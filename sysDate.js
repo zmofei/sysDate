@@ -1,3 +1,6 @@
+/*
+ *get current websit locale time
+ */
 (function(root, factory) {
 
   var sysDate = function() {
@@ -5,7 +8,13 @@
   };
   factory(sysDate);
 
-  root.sysDate = sysDate;
+  if (typeof define === 'function' && (define.amd || define.cmd)) {
+    define(function(require, exports) {
+      return sysDate;
+    });
+  } else {
+    root.sysDate = sysDate;
+  }
 
 })(this, function(exp) {
   exp.config = {
